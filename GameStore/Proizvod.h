@@ -21,6 +21,7 @@ public:
 	float getStanje();
 	
 	virtual void Kupovina();
+	virtual void Info();
 	~Proizvod();
 };
 

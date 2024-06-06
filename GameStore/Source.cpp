@@ -14,7 +14,8 @@ int main()
 {
 	char postojeci = 'l';
 	string novoIme, novoPrezime, novaAdresa;
-	int novBroj, izbor = 9;
+	int novBroj;
+	char izbor = 'b';
 
 	vector<Igrica> igrice =
 	{
@@ -62,21 +63,21 @@ int main()
 	
 	do
 	{
-		if (izbor == 9)
+		if (tolower(izbor) == 'b')
 		{
 			GlavniMenu();
 			cin >> izbor;
 			switch (izbor)
 			{
-			case 1:
+			case '1':
 				PrintIgrice(igrice);
 				cin >> izbor;
 				break;
-			case 2:
+			case '2':
 				PrintKonzole(konzole);
 				cin >> izbor;
 				break;
-			case 3:
+			case '3':
 				korisnici[1].Info();
 				cin >> izbor;
 				break;
@@ -88,5 +89,5 @@ int main()
 			cin >> izbor;
 		}
 
-	} while (izbor != 0);
+	} while (tolower(izbor) != 'q');
 }

@@ -66,6 +66,10 @@ void Proizvod::Kupovina()
 {
 }
 
+void Proizvod::Info()
+{
+}
+
 Proizvod::~Proizvod()
 {
 }
