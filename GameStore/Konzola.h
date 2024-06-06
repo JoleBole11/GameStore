@@ -15,5 +15,6 @@ public:
     int getRam();
     int getStorage();
     void Info();
+    void Kupovina();
 };
 

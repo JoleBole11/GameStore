@@ -1,13 +1,11 @@
 #include "Korisnik.h"
 
-Korisnik::Korisnik(string im, string prez, string ad, int brT)
+Korisnik::Korisnik(string im, string prez, string ad, string brT)
 {
-	brojKorisnika += 1;
 	ime = im;
 	prezime = prez;
 	adresa = ad;
 	brojTelefona = brT;
-	idKorisnika = brojKorisnika;
 }
 
 void Korisnik::setIme(string im)
@@ -25,9 +23,14 @@ void Korisnik::setAdresa(string ad)
 	adresa = ad;
 }
 
-void Korisnik::setBrojTelefona(int brT)
+void Korisnik::setBrojTelefona(string brT)
 {
 	brojTelefona = brT;
+}
+
+void Korisnik::setIdKorisnika(int id)
+{
+	idKorisnika = id;
 }
 
 string Korisnik::getIme()
@@ -45,7 +48,7 @@ string Korisnik::getAdresa()
 	return adresa;
 }
 
-int Korisnik::getBrojTelefona()
+string Korisnik::getBrojTelefona()
 {
 	return brojTelefona;
 }
@@ -57,6 +60,5 @@ int Korisnik::getIdKorisnika()
 
 void Korisnik::Info()
 {
-	system("cls");
 	cout << "Ime: " << ime << endl << "Prezime: " << prezime << endl << "Adresa: " << adresa << endl << "Broj Telefona: " << brojTelefona << endl << "ID: " << idKorisnika << endl;
 }

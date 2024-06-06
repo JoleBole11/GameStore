@@ -28,7 +28,8 @@ string Igrica::getZanr()
 
 void Igrica::Kupovina()
 {
-	stanje -= 1;
+	stanje--;
+	cout << "Kupili ste igricu!" << endl << "Molimo sacekajte 2 sekunde.";
 }
 
 void Igrica::Info()

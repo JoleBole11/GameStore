@@ -41,3 +41,9 @@ void Konzola::Info()
 {
 	cout << "Ime: " << ime << endl << "Sifra: " << sifra << endl << "Proizvodjac: " << proizvodjac << endl << "Cena: " << cena << endl << "Stanje: " << stanje << endl << "Procesor: " << procesor << endl << "Ram: " << ram << "GB" << endl << "Storage: " << storage << "GB" << endl;
 }
+
+void Konzola::Kupovina()
+{
+	stanje--;
+	cout << "Kupili ste konzolu!" << endl << "Molimo sacekajte 2 sekunde.";
+}

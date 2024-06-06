@@ -1,0 +1,3 @@
+CS2 cs2 Valve 1000 100 PC FPS
+EldenRing eldenring FromSoftware 5999 200 PS5,PC RPG
+MassEffectLegendayEdition masseffectle BioWare 1999 200 PS5,PC,XboxOne RPG

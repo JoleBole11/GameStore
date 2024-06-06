@@ -5,19 +5,19 @@ using namespace std;
 class Korisnik
 {
 protected:
-	static int brojKorisnika;
-	string ime, prezime, adresa;
-	int brojTelefona, idKorisnika;
+	string ime, prezime, adresa, brojTelefona;
+	int idKorisnika;
 public:
-	Korisnik(string im, string prez, string ad, int brT);
+	Korisnik(string im, string prez, string ad, string brT);
 	void setIme(string im);
 	void setPrezime(string prez);
 	void setAdresa(string ad);
-	void setBrojTelefona(int brT);
+	void setBrojTelefona(string brT);
+	void setIdKorisnika(int id);
 	string getIme();
 	string getPrezime();
 	string getAdresa();
-	int getBrojTelefona();
+	string getBrojTelefona();
 	int getIdKorisnika();
 	void Info();
 };
