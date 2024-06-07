@@ -8,4 +8,6 @@
 using namespace std;
 
 vector<Igrica> ReadIgrice();
-void ReadKorisnici();
+vector<Korisnik> ReadKorisnici();
+vector<Konzola> ReadKonzole();
+vector<Korisnik> NewKorisnik(vector<Korisnik> korisnici);

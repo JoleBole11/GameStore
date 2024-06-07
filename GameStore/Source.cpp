@@ -13,44 +13,15 @@ using namespace std;
 
 int main()
 {
-	int brojKorisnika = 0, unosId = 0, tempCena, tempStanje;
+	int brojKorisnika = 0, unosId = 0;
 	char postojeci = 'l';
-	string tempIme, tempPrezime, tempAdresa, tempBroj, tempSifra, tempPlatforma, tempZanr, tempProizvodjac;
 	char izbor = 'b', poslednjiIzbor = 'b';
 
 	vector<Igrica> igrice = ReadIgrice();
 
-	vector<Konzola> konzole =
-	{
-		Konzola("Playstation 5", "ps5", "Sony", 59999, 10, "AMD", 32, 1024),
-		Konzola("Xbox One", "xo1", "Microsoft", 29999, 20, "AMD", 8, 256),
-		Konzola("Xbox Series X", "xsx", "Microsoft", 54999, 5, "AMD", 16, 512)
-	};
+	vector<Konzola> konzole = ReadKonzole();
 
-	vector<Korisnik> korisnici =
-	{
-	};
-
-	Korisnik tempKorisnik("a", "a", "a", "a");
-
-	ifstream korisniciFile;
-	korisniciFile.open("korisnici.txt");
-	if (!korisniciFile) 
-	{
-		cerr << "Error in opening the file" << endl;
-		return 1;
-	}
-
-	while (korisniciFile >> tempIme >> tempPrezime >> tempAdresa >> tempBroj) 
-	{
-		brojKorisnika++;
-		tempKorisnik.setIme(tempIme);
-		tempKorisnik.setPrezime(tempPrezime);
-		tempKorisnik.setAdresa(tempAdresa);
-		tempKorisnik.setBrojTelefona(tempBroj);
-		tempKorisnik.setIdKorisnika(brojKorisnika);
-		korisnici.push_back(tempKorisnik);
-	}
+	vector<Korisnik> korisnici = ReadKorisnici();
 
 	while (postojeci != 'y' && postojeci != 'n')
 	{
@@ -62,27 +33,12 @@ int main()
 
 	if (postojeci == 'n')
 	{
-		cout << "Unesite ime: ";
-		cin >> tempIme;
-		cout << "Unesite prezime: ";
-		cin >> tempPrezime;
-		cout << "Unesite adresu: ";
-		cin >> tempAdresa;
-		cout << "Unesite broj telefona: ";
-		cin >> tempBroj;
-
-		Korisnik nov(tempIme, tempPrezime, tempAdresa, tempBroj);
-
-		korisnici.push_back(nov);
-
-		system("cls");
+		korisnici = NewKorisnik(korisnici);
 	}
-	else if (postojeci == 'y')
-	{
-		label:
-		cout << "Unesite vas ID: ";
-		cin >> unosId;
-	}
+
+label:
+	cout << "Unesite vas ID: ";
+	cin >> unosId;
 
 	system("cls");
 	korisnici[unosId - 1].Info();
@@ -148,7 +104,7 @@ int main()
 					poslednjiIzbor = 'b';
 				break;
 			case '3':
-				korisnici[unosId].Info();
+				korisnici[unosId - 1].Info();
 				cin >> izbor;
 				break;
 			}

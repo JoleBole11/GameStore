@@ -60,5 +60,7 @@ int Korisnik::getIdKorisnika()
 
 void Korisnik::Info()
 {
+	system("cls");
 	cout << "Ime: " << ime << endl << "Prezime: " << prezime << endl << "Adresa: " << adresa << endl << "Broj Telefona: " << brojTelefona << endl << "ID: " << idKorisnika << endl;
+	cout << endl << "Pritisnite 'B' da bi ste se vratili." << endl;
 }
